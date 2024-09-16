@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="changed-input">EVENT SUMMARY HTML</h1>
+    <input id="input-field" type="text" />
+    <button id="btn">update</button>
+    <br />
+    <br />
+    <p id="change-event">thiis is event playing function</p>
+    <button onclick="eventControler()">event controler</button>
+    <button id="change-event-2">event controler 2</button>
+    <script>
+      function eventControler() {
+        const changed = document.getElementById("change-event");
+        changed.innerText = "change event";
+      }
+      // Event Listeners
+      document
+        .getElementById("change-event-2")
+        .addEventListener("click", function () {
+          const changed = document.getElementById("change-event");
+          changed.innerText = "change event 2";
+        });
+
+      // option another listener
+
+      document.getElementById("btn").addEventListener("click", function () {
+        const input = document.getElementById("input-field");
+        const inputText = input.value;
+
+        const h1 = document.getElementById("changed-input");
+        h1.innerText = inputText;
+        input.value = "";
+      });
+    </script>
+  </body>
+</html>
